@@ -11,11 +11,36 @@
  Target Server Version : 50716
  File Encoding         : 65001
 
- Date: 28/01/2021 16:28:36
+ Date: 29/01/2021 15:30:30
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for auto_fill
+-- ----------------------------
+DROP TABLE IF EXISTS `auto_fill`;
+CREATE TABLE `auto_fill`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '名称',
+  `auto_create_time` datetime(0) NULL DEFAULT NULL COMMENT '自动填充创建时间',
+  `auto_update_time` datetime(0) NULL DEFAULT NULL COMMENT '自动填充更新时间',
+  `gmt_create` datetime(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
+  `gmt_modified` datetime(0) NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
+  `deleted` tinyint(1) NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '自动填充测试' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of auto_fill
+-- ----------------------------
+INSERT INTO `auto_fill` VALUES (1, '8kror6', NULL, NULL, '2021-01-29 11:26:05', '2021-01-29 11:26:05', 0);
+INSERT INTO `auto_fill` VALUES (2, 'oubg9a', '2021-01-29 11:28:02', NULL, '2021-01-29 11:28:02', '2021-01-29 11:28:02', 0);
+INSERT INTO `auto_fill` VALUES (3, 'c444psupdate', '2021-01-29 11:28:24', NULL, '2021-01-29 11:28:23', '2021-01-29 11:28:23', 0);
+INSERT INTO `auto_fill` VALUES (4, 'jk7g4yupdate', '2021-01-29 11:29:30', '2021-01-29 11:29:31', '2021-01-29 11:29:30', '2021-01-29 11:29:30', 0);
+INSERT INTO `auto_fill` VALUES (5, NULL, '2020-12-12 12:12:00', '2020-12-12 12:12:00', '2021-01-29 11:29:51', '2021-01-29 11:29:51', 0);
+INSERT INTO `auto_fill` VALUES (6, NULL, '2020-12-12 12:12:00', '2020-12-12 12:12:00', '2021-01-29 12:14:04', '2021-01-29 12:14:04', 0);
 
 -- ----------------------------
 -- Table structure for customize_template
@@ -87,9 +112,9 @@ INSERT INTO `user` VALUES (1, 'admin', '$2a$10$bAFotFepA1N8yIpbBMy4iegJUvXcmbeQR
 INSERT INTO `user` VALUES (2, 'dubbo', '$2a$10$EsAfPKw9ecGQsdQZNC0IoeTin2P/uKFsB7Tzh3THP/IvnIJJ1NsTe', NULL, 'b', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-05 07:58:04', '2021-01-07 09:43:28', 0);
 INSERT INTO `user` VALUES (3, 'redis', '$2a$10$qY6epcE3mkNXD56HDczQWe3p6rWdQMCi1AFYMJBOwlRO3BqaK9gJ6', NULL, 'redis', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-07 09:44:03', '2021-01-08 01:07:30', 0);
 INSERT INTO `user` VALUES (4, 'xx', '$2a$10$HMDx47Pgg5hAwf.DrCPlxui8UFOuMhi343wNoLCj.ZCGu2XR/DmqS', NULL, 'xx', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-07 09:57:25', '2021-01-07 09:58:31', 0);
-INSERT INTO `user` VALUES (5, 'rabbit', '$2a$10$IPfjNMOk230mWWHpmcjtqeSxCRz1p/wpIMKK3LH8pdHAFkqxqROEC', NULL, '1o7uvu', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-07 09:57:25', '2021-01-07 09:57:25', 0);
-INSERT INTO `user` VALUES (6, 'aq645o', NULL, NULL, 'hcn5c3', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:07:44', '2021-01-28 16:07:44', 0);
-INSERT INTO `user` VALUES (7, 'rzgz33', NULL, NULL, 'azckwj', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:12:27', '2021-01-28 16:12:27', 0);
-INSERT INTO `user` VALUES (8, '2w0oth', NULL, NULL, '28jmmp', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:13:41', '2021-01-28 16:27:44', 1);
+INSERT INTO `user` VALUES (5, 'xx', '$2a$10$IPfjNMOk230mWWHpmcjtqeSxCRz1p/wpIMKK3LH8pdHAFkqxqROEC', NULL, '1o7uvu', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-07 09:57:25', '2021-01-29 12:24:54', 0);
+INSERT INTO `user` VALUES (6, 'xx', NULL, NULL, 'xyz', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:07:44', '2021-01-29 12:25:03', 0);
+INSERT INTO `user` VALUES (7, 'xx', NULL, NULL, 'xy', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:12:27', '2021-01-29 12:24:44', 0);
+INSERT INTO `user` VALUES (8, 'xx', NULL, NULL, '28jmmp', '0', NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '2021-01-28 16:13:41', '2021-01-29 12:24:46', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
