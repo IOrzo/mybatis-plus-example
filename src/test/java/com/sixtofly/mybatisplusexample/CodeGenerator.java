@@ -136,16 +136,16 @@ public class CodeGenerator {
         // 配置自定义输出模板
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
         // 注意文件目录
-         templateConfig.setEntity("templates/entity.java");
+//         templateConfig.setEntity("templates/entity_customize.java");
         // templateConfig.setService();
         // templateConfig.setController();
 
         templateConfig.setXml(null);
         // 设置为null, 则不会生成相应的文件
-        templateConfig.setController(null);
-        templateConfig.setMapper(null);
-        templateConfig.setService(null);
-        templateConfig.setServiceImpl(null);
+//        templateConfig.setController(null);
+//        templateConfig.setMapper(null);
+//        templateConfig.setService(null);
+//        templateConfig.setServiceImpl(null);
         mpg.setTemplate(templateConfig);
 
         // 策略配置

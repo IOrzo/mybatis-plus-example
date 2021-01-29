@@ -10,6 +10,9 @@ spring:
 
 mybatis-plus:
   mapper-locations: mapper/*.xml
+  configuration:
+    # 开始sql日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   # 全局配置
   global-config:
     db-config:
